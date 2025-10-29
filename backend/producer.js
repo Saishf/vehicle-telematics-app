@@ -1,5 +1,8 @@
 const axios = require("axios");
 
+const API_URL =
+  process.env.API_URL || "http://localhost:4000/api/vehicles/ingest";
+
 const types = ["Car", "Truck", "Bike", "EV"];
 const fuelTypes = {
   Car: "petrol",
@@ -46,7 +49,7 @@ async function sendData() {
   };
 
   try {
-    await axios.post("http://localhost:4000/api/vehicles/ingest", payload);
+    await axios.post(API_URL, payload);
     console.log(`✅ Sent ${payload.type} (${payload.name})`);
   } catch (err) {
     console.error("❌ Error sending data:", err.message);

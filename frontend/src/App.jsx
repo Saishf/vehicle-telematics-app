@@ -19,7 +19,9 @@ function App() {
   const fetchVehicles = async () => {
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:4000/api/vehicles");
+      const res = await fetch(
+        "https://vehicle-telematics-app.onrender.com/api/vehicles"
+      );
       const data = await res.json();
       setVehicles(data.reverse()); // newest first
       setLastUpdated(new Date().toLocaleTimeString());
