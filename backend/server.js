@@ -2,13 +2,13 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const db = require("./db");
-const vehicleRoutes = require("./routes/vehicleRoutes"); // ✅ import route file
+const vehicleRoutes = require("./routes/vehicleRoutes");
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-// ✅ register all vehicle routes under /api/vehicles
+//  register all vehicle routes under /api/vehicles
 app.use("/api/vehicles", vehicleRoutes);
 
 const PORT = process.env.PORT || 4000;

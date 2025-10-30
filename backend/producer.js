@@ -1,7 +1,8 @@
 const axios = require("axios");
 
 const API_URL =
-  process.env.API_URL || "http://localhost:4000/api/vehicles/ingest";
+  "https://vehicle-telematics-app.onrender.com/api/vehicles/ingest" ||
+  "http://localhost:4000/api/vehicles/ingest";
 
 const types = ["Car", "Truck", "Bike", "EV"];
 const fuelTypes = {

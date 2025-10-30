@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const db = require("../db");
 
-// ✅ Fetch all vehicles
+// Fetch all vehicles
 router.get("/", (req, res) => {
   const sql = "SELECT * FROM vehicles";
   db.all(sql, [], (err, rows) => {
@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
   });
 });
 
-// ✅ Ingest vehicle data
+//  Ingest vehicle data
 router.post("/ingest", (req, res) => {
   const {
     type,
